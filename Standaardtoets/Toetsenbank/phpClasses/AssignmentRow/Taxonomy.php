@@ -1,10 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+include './Taxonomy/Info.php';
 
 /**
  * Description of Taxonomy
@@ -17,10 +13,6 @@ class Taxonomy {
     
     public  $scales = [];
     
-    function __construct($scale, $value) {
-        $info->scale = $scale;
-        $info->value = $value;
-        
-        
-    }
+    
+    
 }

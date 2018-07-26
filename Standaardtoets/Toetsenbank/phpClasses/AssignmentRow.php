@@ -68,7 +68,7 @@ class AssignmentRow {
     
 }
 
-$p = new PointCoindition();
+$p = new PointCondition();
 $p->body = 'test';
 $p->value = 1;
 
