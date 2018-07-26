@@ -6,14 +6,16 @@
  * and open the template in the editor.
  */
 
+include 'Meta/Domein.php';
+include 'Meta/Taxonomie.php';
 
 /**
- * Description of Info
+ * Description of Domain
  *
  * @author AKS01
  */
-class Info {
+class Meta {
     //put your code here
-    public  $scale = '',
-            $value = -1;
+    public  $domeinen = [],
+            $taxonomie = [];
 }

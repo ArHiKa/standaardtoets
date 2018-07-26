@@ -1,17 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-include './AssignmentRow/PointCondition.php';
-include './AssignmentRow/Taxonomy.php';
+include 'AssignmentRow/PointCondition.php';
+include 'AssignmentRow/Meta.php';
 
     
 /**
- * Description of question
+ * Een regel uit een toets. Kan verschillende types zijn.<br>
+ * Titel, Info, Question, Figure
  *
  * @author AKS01
  */
@@ -62,17 +57,16 @@ class AssignmentRow {
              */
             $pointConditions = [],
             
-            $taxonomy;
+            $meta ;
     
     
     
 }
 
-$p = new PointCondition();
-$p->body = 'test';
-$p->value = 1;
+$p = new PointCondition('test', -3);
 
 $a = new AssignmentRow();
 $a->pointConditions = [$p, $p];
-//$a->taxonomy = new Taxonomy(Taxonomy::$RTTI, 4);
-echo json_encode($a);
+
+$a->meta = new Meta();
+echo json_encode($a, JSON_PRETTY_PRINT);
