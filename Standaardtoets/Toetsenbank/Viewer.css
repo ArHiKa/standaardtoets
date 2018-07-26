@@ -1,0 +1,129 @@
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 12pt;
+}
+
+p, figure {
+    margin: 0px;
+}
+
+
+
+table {
+    margin: 0cm;
+    border-collapse: collapse;
+    page-break-after: always;
+    width: 180mm;
+    
+    margin-bottom: 1.5cm;
+}
+
+
+
+table, td, tr {
+    border: none;
+}
+
+
+
+td{
+    vertical-align: top;
+    text-align: left;
+}
+
+p > span > img {
+    vertical-align: bottom;
+}
+
+p > span:empty:before {
+    content: '\200b';
+}
+
+td.info {
+    padding-top: 6pt;
+}
+
+td.question {
+    padding-bottom: 12pt;
+}
+
+td.numpoints {
+    padding-right: 6pt;
+    font-size: 10pt;
+}
+
+td.type {
+    padding-right: 6pt;
+    font-weight: bold;
+}
+
+td.title {
+    font-weight: bolder;
+    font-size: 14pt;
+    border-bottom: 6pt solid lightgray;
+}
+
+figcaption {
+    font-weight: bold;
+    margin-top: 3pt;
+}
+
+figure {
+    margin: 6pt;
+}
+
+.attachmenttable {
+    font-weight: bold;
+}
+
+
+
+thead > tr {
+    font-size: 14pt;
+    font-weight: bold;
+    border-bottom: 6pt solid lightgray;
+}
+
+td.attachment {
+    padding-top: 3cm;
+}
+
+span.attachment > *{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+td.answer {
+    padding-top: 0.7cm;
+    padding-bottom: 0.3cm;
+}
+
+td.calculation {
+    padding-bottom: 0.7cm;
+}
+
+.bullet {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+@page{
+    margin: 1.7cm auto;
+    
+}
+
+
+@media print
+{
+  table.answersheet > tbody    {   
+            display: block;
+            page-break-inside:avoid; 
+            }
+
+}
