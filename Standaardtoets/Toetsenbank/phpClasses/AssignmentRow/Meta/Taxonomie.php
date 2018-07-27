@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 include 'Taxonomie/Info.php';
 
 /**
@@ -10,7 +12,8 @@ include 'Taxonomie/Info.php';
  */
 class Taxonomie {
     //SCALES
-    static  $RTTI = 'RTTI';
+    static  $NO_SCALE = 'NOSCALE',
+            $RTTI = 'RTTI';
     
     public  $scales = [];
     
@@ -20,10 +23,10 @@ class Taxonomie {
      * @param Int $value
      */
     function __construct($scale, $value) {
-        $this->addTaxonomy($scale, $value);
+
     }// end function __construct($scale, $value)
     
-    function addTaxonomy($scale, $value) {
+    function addTaxonomy(string $scale, int $value) {
         if(is_string($scale) === false){
             throw new Exception('param1 should be a string');
         }// end if
@@ -37,4 +40,4 @@ class Taxonomie {
         array_push($this->scales, $info);
     }// end function addTaxonomy($scale, $value) 
     
-}
+}// end class Taxonomie

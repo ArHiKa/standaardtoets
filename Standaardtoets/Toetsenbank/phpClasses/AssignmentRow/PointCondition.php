@@ -1,10 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+declare (strict_types = 1);
 
 
 /**
@@ -24,7 +20,8 @@ class PointCondition {
      * @param String $body
      * @param Int $value
      */
-    function __construct($body = '', $value = -1) {
+    function __construct($body, $value) {
+        /*
         if(is_string($body) === false){
             throw new Exception('param1 should be a string');
         }// end if
@@ -32,6 +29,18 @@ class PointCondition {
         if(is_int($value) === false) {
             throw new Exception('param2 should be a int');
         }// end if
+         * 
+         */
+        
+        try {
+            $this->init($body, $value);
+        } catch (TypeError $ex) {
+            throw new Exception($ex->getMessage());
+        }
+        
+    }
+    
+    private function init(string $body, int $value){
         $this->body = $body;
         $this->value = $value;
     }

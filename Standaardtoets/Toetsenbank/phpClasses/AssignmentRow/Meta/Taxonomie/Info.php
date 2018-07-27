@@ -18,18 +18,17 @@ class Info {
      * @param Int $value
      */
     function __construct($scale, $value) {
-        if(is_string($scale)){
-            $this->scale = $scale;
-        } else {
-            throw new Exception('param1 is not string');
-        }
-        
-        if(is_int($value) && $value > 0){
-            $this->value = $value;
-        } else {
-            throw new Exception('param2 is not int bigger than 0');
+        try {
+            $this->init($scale, $value);
+        } catch (TypeError $ex) {
+            throw new Exception($ex->getMessage());
         }
 
         
     }// end function __construct($scale, $value) 
+    
+    private function init(string $scale, int $value){
+        $this->scale = $scale;
+        $this->value = $value;
+    }
 }// end class Info

@@ -29,4 +29,8 @@ class Domein {
             $subdomein,
             $specificatie,
             $formules = [];
+    
+    function __construct($domein, $subdomein, $specificatie, $formules = []) {
+        
+    }
 }

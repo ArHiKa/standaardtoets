@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types = 1);
+
 include 'AssignmentRow/PointCondition.php';
 include 'AssignmentRow/Meta.php';
 
@@ -35,35 +37,35 @@ class AssignmentRow {
             /**
              * @var String Display of ATTACHMENT
              */
-            $attachmentBody = '',
+            $attachmentBody,
             /**
              * @var String Displays short answer of question
              */
-            $answer = '',
+            $answer,
             /**
              * @var String Displays calculation or long answer
              */
-            $calculation = '',
+            $calculation,
             /**
              * @var String Displays possible remarks
              */
-            $remarks = '',
+            $remarks,
             /**
              * @var Number Number of points for this question
              */
-            $points = -1,
+            $points,
             /**
              * @var PointCondition Array Description
              */
-            $pointConditions = [],
+            $pointConditions,
             
-            $meta ;
+            $meta;
     
     
     
 }
 
-$p = new PointCondition('test', -3);
+$p = new PointCondition('test', 1);
 
 $a = new AssignmentRow();
 $a->pointConditions = [$p, $p];
