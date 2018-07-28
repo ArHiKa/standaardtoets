@@ -1,10 +1,7 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+declare (strict_types = 1);
+
 
 /**
  * Description of Domein
@@ -31,6 +28,20 @@ class Domein {
             $formules = [];
     
     function __construct($domein, $subdomein, $specificatie, $formules = []) {
+        try {
+            $this->init($domein, $subdomein, $specificatie, $formules);
+        } catch (TypeError $ex) {
+            throw new Exception($ex->getMessage());
+        }
+        
+        
         
     }
+    
+    function init(int $domein, int $subdomein, int $specificatie, array $formules) {
+            $this->domein = $domein;
+            $this->subdomein = $subdomein;
+            $this->specificatie = $specificatie;
+            $this->formules = $formules;
+        }
 }

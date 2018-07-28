@@ -23,21 +23,22 @@ class Taxonomie {
      * @param Int $value
      */
     function __construct($scale, $value) {
-
+        $this->addTaxonomy($scale, $value);
     }// end function __construct($scale, $value)
     
-    function addTaxonomy(string $scale, int $value) {
-        if(is_string($scale) === false){
-            throw new Exception('param1 should be a string');
-        }// end if
+    
+    function addTaxonomy($scale, $value) {
         
-        if(is_int($value) === false) {
-            throw new Exception('param2 should be a int');
-        }// end if
+        try {
+            $this->init($scale, $value);
+        } catch (TypeError $ex) {
+            throw new Exception($ex->getMessage());
+        }
         
-        $info = new Info($scale, $value);
-        // push new value
-        array_push($this->scales, $info);
+        
     }// end function addTaxonomy($scale, $value) 
     
+    function init(string $scale, int $value){
+        array_push($this->scales, new Info($scale, $value));
+    }
 }// end class Taxonomie
